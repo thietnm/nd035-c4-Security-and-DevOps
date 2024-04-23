@@ -23,18 +23,24 @@ public class Item {
 	@JsonProperty
 	private Long id;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "name")
 	@JsonProperty
 	private String name;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "price")
 	@JsonProperty
 	private BigDecimal price;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, name = "description")
 	@JsonProperty
 	private String description;
-	
+
+	public Item(String name, BigDecimal price, String description) {
+		this.name = name;
+		this.price = price;
+		this.description = description;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
